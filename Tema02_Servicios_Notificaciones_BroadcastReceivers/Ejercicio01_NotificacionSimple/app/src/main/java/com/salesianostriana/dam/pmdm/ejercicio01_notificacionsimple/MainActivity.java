@@ -70,21 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int id = v.getId();
-
+        String cancionSelec = canciones.getSelectedItem().toString();
         switch (id){
             case R.id.btn_play:
-                service.putExtra("cancion", canciones.getSelectedItem().toString());
-
-                if(canciones.getSelectedItem().toString().equalsIgnoreCase("Terriblemente cruel")){
-
-                    service.putExtra("uri",R.raw.leiva_terriblemente);
-
-                }else if(canciones.getSelectedItem().toString().equalsIgnoreCase("Polvora")){
-
-                    service.putExtra("uri",R.raw.leiva_terriblemente);
-                }
-
-                startService(service);
+                    service.putExtra("cancion", canciones.getSelectedItem().toString());
+                    startService(service);
                 break;
             case R.id.btn_stop:
                 stopService(service);
