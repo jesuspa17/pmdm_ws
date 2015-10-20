@@ -1,9 +1,10 @@
-package com.dam.salesianostriana.pmdm.ejernotificacionsimple;
+package com.salesianostriana.dam.pmdm.ejercicio01_notificacionsimple;
 
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ public class MiNotificacion extends Service {
     int nNotificationId = 1;
     NotificationManager notMag = null;
 
+    MediaPlayer mp;
+
     public MiNotificacion() {
     }
 
@@ -25,6 +28,7 @@ public class MiNotificacion extends Service {
         super.onCreate();
         //gestiona la notificación
         notMag = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mp = new MediaPlayer();
 
     }
 
@@ -34,13 +38,17 @@ public class MiNotificacion extends Service {
         if(intent!=null) {
             Bundle extras = intent.getExtras();
             String cancionAReproducir = extras.getString("cancion");
+            int uriCancion = extras.getInt("uri");
+
 
             mBuilder = new NotificationCompat.Builder(this).setSmallIcon(R.drawable.start).setContentTitle("Reproduciendo").setContentText(cancionAReproducir);
+            mp.create(this,uriCancion);
+            mp.start();
             //se crea la notificación
             notMag.notify(nNotificationId, mBuilder.build());
         }
 
-        return START_REDELIVER_INTENT;
+        return START_NOT_STICKY;
     }
 
     @Override
@@ -48,8 +56,12 @@ public class MiNotificacion extends Service {
         super.onDestroy();
         mBuilder.setSmallIcon(R.drawable.pau);
         mBuilder.setContentTitle("Pausa");
+
+        mp.stop();
         //actualizo notificacion
         notMag.notify(nNotificationId, mBuilder.build());
+
+        super.onDestroy();
     }
 
     @Nullable

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.dam.salesianostriana.pmdm.ejernotificacionsimple"
+        applicationId "com.salesianostriana.dam.pmdm.ejercicio01_notificacionsimple"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1

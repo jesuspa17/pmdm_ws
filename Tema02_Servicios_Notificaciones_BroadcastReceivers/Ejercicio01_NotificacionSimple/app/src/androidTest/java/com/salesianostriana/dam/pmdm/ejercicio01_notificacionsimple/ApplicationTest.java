@@ -1,4 +1,4 @@
-package com.dam.salesianostriana.pmdm.ejernotificacionsimple;
+package com.salesianostriana.dam.pmdm.ejercicio01_notificacionsimple;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

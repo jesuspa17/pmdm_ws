@@ -1,19 +1,19 @@
-package com.dam.salesianostriana.pmdm.ejernotificacionsimple;
+package com.salesianostriana.dam.pmdm.ejercicio01_notificacionsimple;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Spinner canciones;
-    ImageButton play;
-    ImageButton stop;
+    Button play;
+    Button stop;
     Intent service;
 
     public void darFormatoSpinner(Spinner s, int array){
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //obteniendo elementos de la UI
         canciones = (Spinner) findViewById(R.id.spi_canciones);
-        play = (ImageButton) findViewById(R.id.btn_play);
-        stop = (ImageButton) findViewById(R.id.btn_stop);
+        play = (Button) findViewById(R.id.btn_play);
+        stop = (Button) findViewById(R.id.btn_stop);
 
         //se carga el spinner
         this.darFormatoSpinner(canciones, R.array.canciones);
@@ -74,6 +74,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (id){
             case R.id.btn_play:
                 service.putExtra("cancion", canciones.getSelectedItem().toString());
+
+                if(canciones.getSelectedItem().toString().equalsIgnoreCase("Terriblemente cruel")){
+
+                    service.putExtra("uri",R.raw.leiva_terriblemente);
+
+                }else if(canciones.getSelectedItem().toString().equalsIgnoreCase("Polvora")){
+
+                    service.putExtra("uri",R.raw.leiva_terriblemente);
+                }
+
                 startService(service);
                 break;
             case R.id.btn_stop:

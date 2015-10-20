@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">EjerNotificacionSimple</string>
+    <string name="app_name">Ejercicio01_NotificacionSimple</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
     <string-array name="canciones">
         <item>Terriblemente Cruel</item>
         <item>Polvora</item>
