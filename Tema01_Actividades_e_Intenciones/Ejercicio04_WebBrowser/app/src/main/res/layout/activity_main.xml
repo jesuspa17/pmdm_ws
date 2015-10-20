@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/lneal_navegacion">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_navegacion"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="262dp"
+            android:layout_height="49dp"
+            android:background="#ffffff"
+            android:id="@+id/texto_nav"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/btn_fav"
+            android:weightSum="1">
+
+            <EditText
+                android:layout_width="185dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editDireccion"
+                android:background="@drawable/borde_navegacion"
+                android:paddingLeft="10dp"
+                android:singleLine="true"/>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_buscar"
+                android:src="@drawable/search"
+                android:background="@drawable/borde_navegacion" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAV"
+            android:id="@+id/btn_fav"
+            android:src="@drawable/favoff"
+            android:background="#efefef"
+            android:layout_marginEnd="73dp"
+            android:paddingTop="7dp"
+            android:layout_alignTop="@+id/texto_nav"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_lista"
+            android:layout_alignTop="@+id/btn_fav"
+            android:layout_alignStart="@+id/btn_fav"
+            android:layout_marginStart="38dp"
+            android:src="@drawable/list"
+            android:background="#efefef"
+            android:layout_alignBottom="@+id/texto_nav"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="6dp"/>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:id="@+id/progressBar"
+        android:indeterminate="false" />
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView" />
+
+</LinearLayout>

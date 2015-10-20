@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">EjemploSpinner</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="equipo_futbol">
+        <item>Keylor Navas</item>
+        <item>Danilo</item>
+        <item>Sergio Ramos</item>
+        <item>Varane</item>
+        <item>Marcelo</item>
+        <item>Modric</item>
+        <item>Kroos</item>
+        <item>Cristiano</item>
+        <item>Isco</item>
+        <item>Bale</item>
+        <item>Benzema</item>
+    </string-array>
+
+
+
+</resources>
