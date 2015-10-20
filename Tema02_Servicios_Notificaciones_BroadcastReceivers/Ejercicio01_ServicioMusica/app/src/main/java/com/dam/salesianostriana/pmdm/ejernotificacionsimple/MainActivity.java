@@ -75,8 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (id) {
             case R.id.btn_play:
+                //en ambos if, se le pasa al servicio la canción y el nombre de la canción correspondiente.
                 if (canciones.getSelectedItem().equals("Terriblemente Cruel")) {
-
+                    
                     service.putExtra("cancion", canciones.getSelectedItem().toString());
                     service.putExtra("uri", R.raw.leiva_terriblemente);
                     startService(service);
