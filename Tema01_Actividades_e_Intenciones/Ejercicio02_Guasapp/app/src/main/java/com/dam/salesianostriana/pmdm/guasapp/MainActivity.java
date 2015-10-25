@@ -10,6 +10,43 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+Guasap App - 7/10/2015
+
+GUASAP app
+
+Bill Gates, el que fuera CEO y fundador de Microsoft, interesado por las aplicaciones móviles, se ha lanzado 
+a desarrollar una aplicación que le haga la competencia a Whatsapp.
+
+Bill Gates le ha encargado el desarrollo de la aplicación a los alumnos de 2º DAM de los Salesianos de Triana. 
+La aplicación ha sido bautizada como Guasap.
+
+En una 1ª fase de desarrollo se pide que la aplicación realice la siguiente funcionalidad:
+GUASAP COMO APLICACIÓN DE MENSAJERÍA
+
+Si en nuestro móvil Android, en el detalle de un contacto, nos encontramos con el icono de envío de mensaje, 
+al pulsar, nos deberán aparecer todas las aplicaciones que permitan enviar mensajes de texto, como los SMS. 
+Entre esas aplicaciones deberá aparecer la aplicación Guasap, tal y como se muestra en la 
+siguiente secuencia de imágenes:
+
+Para que nuestra aplicación Guasap, pueda tratar dichas peticiones, debemos saber los siguientes datos:
+
+    acción: android.intent.action.SENDTO
+    esquema de datos: smsto (en clase lo hicimos con datos "tel").
+    categoría: android.intent.category.DEFAULT
+
+El Activity que controlará el envío de mensajes será SentMessageActivity.
+
+Para probar el lanzamiento de nuestra app Guasap, utilizar la app que hicimos en 
+clase de ListinTelefonico que haga lo siguiente:
+
+    Uri uri = Uri.parse("smsto:" + smsNumber);
+    Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+    intent.putExtra("sms_body", "Hola Mundo");  
+    startActivity(intent);
+    
+**/
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton btn_miguel, btn_jesus;
     TextView tlf_miguel, tlf_jesus;
