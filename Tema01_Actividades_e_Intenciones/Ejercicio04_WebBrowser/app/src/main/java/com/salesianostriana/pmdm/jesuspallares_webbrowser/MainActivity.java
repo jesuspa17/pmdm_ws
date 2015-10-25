@@ -23,10 +23,38 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Proyecto Web Browser
- * @author Jesús Pallares
- * Curso 2ºDAM
- *
+ Proyecto Web Browser
+ @author Jesús Pallares
+ Curso 2ºDAM
+
+Con este proyecto pretendemos diseñar la pantalla de un Navegador, que debe constar de:
+
+    Barra de direcciones
+    Botón de buscar
+    Botón de favoritos
+    Visor de página web
+
+1. CARGAR PÁGINAS WEBSEl funcionamiento consistirá en que cada vez que una persona escriba una URL en 
+barra de direcciones y pulse en el botón buscar, deberá cargarse dicha URL en el visor de página web.
+
+2. APARECER COMO APP DE NAVEGACIÓN
+
+    Además, la aplicación debe poder lanzarse desde otra aplicación que realice un Intent implícito, 
+    como el siguiente:
+    
+    Uri webpage = Uri.parse("http://www.android.com");
+    Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+    
+    Para poder capturar esta acción debemos implementar un Intent-filter en nuestra aplicación con 
+    la siguiente información:
+    
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="http" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />.
+
+3. FAVORITOS
+    La aplicación deberá permitir guardas páginas en favorito.
  */
 public class MainActivity extends AppCompatActivity {
     //Elementos obtenidos de la UI
