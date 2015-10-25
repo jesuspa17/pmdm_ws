@@ -11,6 +11,43 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+Aplicación Intents múltiples. - 8/10/2015
+
+Queremos conseguir diseñar una aplicación que realice varias funciones. 
+En primer lugar, la aplicación debe constar de un menú principal que nos permita selccionar 
+entre las diferentes funciones que serán:
+
+    Llamar por teléfono
+    Buscar en el mapa
+    Envío de email
+
+Lo que se pretende es que desde nuestra aplicación podamos introducir los datos necesarios para
+realizar cada una de las acciones y se ejecuten. Pasamos a detellarlas:
+
+-LLAMAR POR TELÉFONO
+
+    El usuario podrá introducir un número de teléfono. Al pulsar en un botón "Realizar llamada", 
+    nos deberá aparecer el número escrito por el usuario en la interfaz de llamada, para poder realizar dicha llamada.
+
+-BUSCAR EN MAPA
+    
+    El usuario podrá introducir una dirección, del mismo modo que lo haría en el buscador de direcciones 
+    de Google Maps (http://maps.google.es) y al pulsar en el mapa, se deberá mostrar dicha dirección en un Mapa de Google.
+
+-ENVÍO DE EMAIL
+
+    El usuario podrá redactar un email y enviarlo. Para ello indicará: email destinatario, mensaje del correo y asunto.
+    
+    IMPORTANTE: para la realización de este ejercicio es necesario definir un 
+    Dispositivo Virtual en nuestro AVD que utilice la API de Google de la versión en la que implementemos la aplicación.
+    
+    AYUDA: Para la realización de este ejercicio será necesario el uso de Intents 
+    (acciones lanzadas por el usuario y que serán resueltas por Aplicaciones distintas a la nuestra). 
+    Como ayuda se recomienda leer el siguiente enlace de Android Developer: 
+    http://developer.android.com/intl/es/training/basics/intents/sending.html
+ * */
+
 public class MainActivity extends AppCompatActivity{
 
     @Bind(R.id.llamada)
