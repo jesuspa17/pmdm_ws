@@ -10,6 +10,32 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+/**
+Servicio simple con Notificación
+
+En este ejercicio se pide realizar nuestro primer proyecto con Servicios y Notificaciones. 
+Debemos crear los siguientes elementos:
+
+- Un Activity (MainActivity) que tenga 2 botones: Iniciar y Parar, que inicien y paren el Servicio respectivamente. 
+
+Recordar que la forma de lanzar un servicio es:
+Intent i = new Intent(this, MiPrimerService.class);
+startService(intent):
+
+Y la forma de pararlo:
+stopService(intent);
+
+- Un Service (MiPrimerService) que lo único que debe hacer ahora mismo es en el método 
+startCommand (método que se lanza al iniciar el servicio), debe lanzar una notificación.
+
+- La diferencia con el ejercicio realizado en clase es que en la Interfaz de usuario debemos 
+implementar un Spinner con diferentes títulos de canciones y al darle al botón Play, deberá mostrarse 
+en la notificación el título de la canción seleccionada.
+
+- Si se pulsa en el botón stop, deberá ponerse en la notificación "Pausa" y 
+como subtítulo el título de la canción pausada.
+
+ **/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Spinner canciones;
     ImageButton play;
