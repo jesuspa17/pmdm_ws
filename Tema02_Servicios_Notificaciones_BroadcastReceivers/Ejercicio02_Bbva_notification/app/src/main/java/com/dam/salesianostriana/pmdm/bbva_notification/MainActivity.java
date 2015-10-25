@@ -22,7 +22,8 @@ Se pide implementar la pantalla en la que se recibe dicho código SMS. El proces
     que la operación ha sido correcta.
 
 Ampliación:
-Dicho código extraído deberá ser introducido de manera automática por la app en el EditText en el que el usuario lo debería haber escrito, así ahorramos al usuario tener que escribirlo.
+Dicho código extraído deberá ser introducido de manera automática por la app en el EditText 
+en el que el usuario lo debería haber escrito, así ahorramos al usuario tener que escribirlo.
  **/
 
 public class MainActivity extends AppCompatActivity {
