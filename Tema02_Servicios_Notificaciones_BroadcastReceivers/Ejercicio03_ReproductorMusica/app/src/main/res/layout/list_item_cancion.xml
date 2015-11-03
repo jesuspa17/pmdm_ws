@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ayo Technology"
+        android:id="@+id/textViewCancion"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Dan Quinn Band"
+        android:id="@+id/textViewGrupo"
+        android:layout_below="@+id/textViewCancion"
+        android:layout_alignStart="@+id/textViewCancion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="4:30"
+        android:id="@+id/textViewDuracion"
+        android:layout_alignBottom="@+id/textViewGrupo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textViewCancion"
+        android:gravity="center"
+        android:textSize="15dp" />
+</RelativeLayout>

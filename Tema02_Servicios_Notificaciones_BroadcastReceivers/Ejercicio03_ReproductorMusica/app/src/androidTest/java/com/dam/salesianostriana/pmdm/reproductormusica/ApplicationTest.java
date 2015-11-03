@@ -1,4 +1,4 @@
-package com.dam.salesianostriana.di.playerpro;
+package com.dam.salesianostriana.pmdm.reproductormusica;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
