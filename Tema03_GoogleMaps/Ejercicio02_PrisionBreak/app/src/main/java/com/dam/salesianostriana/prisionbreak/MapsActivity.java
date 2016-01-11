@@ -40,9 +40,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     Marker mi_posicion;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,65 +61,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        final LatLng salesianos = new LatLng(39.379608,-6.006966);
-        final LatLng fuera = new LatLng(40.380285,-6.007007);
-        //LatLng pos_actual = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
-
-        //marcador
-        mi_posicion = mMap.addMarker(new MarkerOptions()
-                .position(salesianos)
-                .draggable(true));
-
-
-        List<LatLng> points = new ArrayList<>();
-        points.add(new LatLng(37.379608,-6.006966));
-        points.add(new LatLng(37.380512,-6.005775));
-        points.add(new LatLng(37.381543,-6.00688));
-        points.add(new LatLng(37.381151,-6.00747));
-        points.add(new LatLng(37.381279,-6.00777));
-        points.add(new LatLng(37.380946,-6.008392));
-        points.add(new LatLng(37.379608, -6.006966));
-
-
-        PolygonOptions rectOptions = new PolygonOptions()
-                .addAll(points)
-                .strokeColor(Color.BLUE)
-                .strokeWidth(15);
-
-
-
-        boolean contain = PolyUtil.containsLocation(salesianos, points, true);
-
-        if(contain){
-            mi_posicion.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker_green));
-        }else{
-            mi_posicion.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker_red));
-        }
-
-        Polygon polygon = mMap.addPolygon(rectOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(salesianos, 15));
-
-
-       /* mMap = googleMap;
-        //Se añaden opciones al mapa.
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-
-        //Aquí se crea el polígono que rodea al colegio.
-        PolygonOptions rectOptions = new PolygonOptions()
-                .add(new LatLng(37.379608,-6.006966),
-                        new LatLng(37.380512,-6.005775),
-                        new LatLng(37.381543,-6.00688),
-                        new LatLng(37.381151,-6.00747),
-                        new LatLng(37.381279,-6.00777),
-                        new LatLng(37.380946,-6.008392),
-                        new LatLng(37.379608,-6.006966))
-                .strokeColor(Color.RED)
-                .strokeWidth(15)
-                .fillColor(Color.BLUE);
-
-
-        Polygon polygon = mMap.addPolygon(rectOptions);
-        polygon.setVisible(true);*/
 
     }
 
@@ -139,25 +77,44 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (mMap != null) {
             mMap.clear();
         }
-        LatLng posicion_actual = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicion_actual, 13));
+        //Localización de prueba
+        final LatLng salesianos = new LatLng(39.379608,-6.006966);
+        //Localización actual.
+        LatLng pos_actual = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
 
-        final LatLng salesianos = new LatLng(37.379608,-6.006966);
+        //marcador
+        mi_posicion = mMap.addMarker(new MarkerOptions()
+                .position(pos_actual)
+                .draggable(true));
+
+        //Puntos que pintarán el polígono.
+        List<LatLng> points = new ArrayList<>();
+        points.add(new LatLng(37.379608,-6.006966));
+        points.add(new LatLng(37.380512,-6.005775));
+        points.add(new LatLng(37.381543,-6.00688));
+        points.add(new LatLng(37.381151,-6.00747));
+        points.add(new LatLng(37.381279,-6.00777));
+        points.add(new LatLng(37.380946,-6.008392));
+        points.add(new LatLng(37.379608, -6.006966));
+
+
         PolygonOptions rectOptions = new PolygonOptions()
-                .add(new LatLng(37.379608,-6.006966),
-                        new LatLng(37.380512,-6.005775),
-                        new LatLng(37.381543,-6.00688),
-                        new LatLng(37.381151,-6.00747),
-                        new LatLng(37.381279,-6.00777),
-                        new LatLng(37.380946,-6.008392),
-                        new LatLng(37.379608,-6.006966))
+                .addAll(points)
                 .strokeColor(Color.BLUE)
                 .strokeWidth(15);
 
+        //Mediante el siguiente método se comprueba si el punto está dentro del polígono que forman los puntos creados anteriormente.
+        boolean dentro = PolyUtil.containsLocation(pos_actual, points, true);
+
+        //Si está dentro, el marker será de color verde, si no, rojo.
+        if(dentro){
+            mi_posicion.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker_green));
+        }else{
+            mi_posicion.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker_red));
+        }
+
         Polygon polygon = mMap.addPolygon(rectOptions);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(salesianos,15));
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos_actual, 15));
 
     }
 
