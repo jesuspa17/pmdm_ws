@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="500 metros"
+                android:text="0 m"
                 android:id="@+id/textViewMetros"
                 android:gravity="center"
                 android:paddingLeft="5dp"/>
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="200 kcal"
+                android:text="0 kcal"
                 android:gravity="center"
                 android:id="@+id/textViewCalorias"
                 android:paddingLeft="5dp"/>
@@ -78,14 +78,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="COMENZAR"
-                android:id="@+id/button" />
+                android:id="@+id/btn_comenzar" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="GUARDAR"
-                android:id="@+id/button2"
+                android:id="@+id/btn_guardar"
                 />
 
         </LinearLayout>

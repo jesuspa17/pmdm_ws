@@ -5,9 +5,10 @@
 
 
     <com.db.chart.view.BarChartView
-        android:id="@+id/barchart"
+        android:id="@+id/stackBar"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="300dp"
+        android:padding="15dp"/>
 
 
 </FrameLayout>
