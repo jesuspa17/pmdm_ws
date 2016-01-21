@@ -182,8 +182,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                     DecimalFormat decimalFormat = new DecimalFormat("##.##");
                     double metros = SphericalUtil.computeDistanceBetween(lista_lat.get(0), lista_lat.get(lista_lat.size() - 1)) / 1000;
                     //hace que se vaya mostrando la distancia recorrida en ese momento.
-                    txtMetros.setText(String.valueOf(decimalFormat.format(metros) + " km"));
-                    txtCalorias.setText(String.valueOf(decimalFormat.format(calcularCalorias(55,metros)) + " k/cal"));
+                    txtMetros.setText(String.valueOf(decimalFormat.format(metros)));
+                    txtCalorias.setText(String.valueOf(decimalFormat.format(calcularCalorias(55,metros))));
                 }
                 Polyline polygon = map.addPolyline(options);
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(lat_long, 15));

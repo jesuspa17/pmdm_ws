@@ -1,5 +1,7 @@
 package com.dam.salesianostriana.calccalorias;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -31,14 +33,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
     }
 
@@ -52,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("preferencias",MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+
         if (id == R.id.action_settings) {
+            this.finish();
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            editor.clear();
+            editor.apply();
             return true;
         }
 
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "MAPA";
+                        return "RUTA";
                 case 1:
                     return "ESTADÍSTICAS";
             }

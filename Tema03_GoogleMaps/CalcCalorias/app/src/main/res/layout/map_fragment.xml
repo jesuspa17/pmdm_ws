@@ -8,63 +8,72 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/mapview"
             android:layout_width="fill_parent"
-            android:layout_height="300dp" />
+            android:layout_height="305dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Distancia recorrida:"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="DISTANCIA (KM):"
                 android:gravity="center"
                 android:id="@+id/textView"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textSize="15dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="0 m"
                 android:id="@+id/textViewMetros"
                 android:gravity="center"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textSize="15dp"/>
+
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Calorias quemadas:"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="CALORIAS (KCAL): "
                 android:id="@+id/textView5"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:paddingLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="0 kcal"
                 android:gravity="center"
                 android:id="@+id/textViewCalorias"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textSize="15dp"/>
+
 
         </LinearLayout>
 
@@ -75,17 +84,23 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="COMENZAR"
-                android:id="@+id/btn_comenzar" />
+                android:id="@+id/btn_comenzar"
+                android:background="@drawable/bg_button"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"/>
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="GUARDAR"
+                android:background="@drawable/bg_button"
+                android:textColor="@android:color/white"
                 android:id="@+id/btn_guardar"
+                android:layout_margin="5dp"
                 />
 
         </LinearLayout>
