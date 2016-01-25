@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dam.salesianostriana.calccalorias.GraficaFragment"
+    android:tag="graficaFragment"
+    android:id="@+id/graficaFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerRutas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="1dp"/>
+
+</LinearLayout>
+
+
+
+</FrameLayout>
