@@ -1,8 +1,10 @@
 package com.dam.salesianostriana.calccalorias;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,10 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -69,19 +75,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
+        @Override
+        public void notifyDataSetChanged() {
+            super.notifyDataSetChanged();
+        }
+
+
+
         @Override
         public Fragment getItem(int position) {
             Fragment f = null;
-            switch (position){
-                case 0:
-                    f= new MapFragment();
-                    break;
-                case 1:
-                    f =  new GraficaFragment();
-                    break;
+
+            if(position ==0 ){
+                return new MapFragment();
+            }else{
+                return new GraficaFragment();
             }
 
-            return f;
+        }
+
+        @Override
+        public void restoreState(Parcelable state, ClassLoader loader) {
+            super.restoreState(state, loader);
         }
 
         @Override
