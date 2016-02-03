@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Puntuación: "
+            android:textSize="15dp"
+
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/textViewPuntuacion" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:textSize="15dp"
+            android:id="@+id/textViewPuntuacion"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentEnd="true" />
+
+        <!--<Button
+            android:layout_width="match_parentdp"
+            android:layout_height="wrap_content"
+            android:text="Juega otra vez!"
+            android:id="@+id/btn_restart"
+            android:visibility="invisible"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textView" />
+-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Tiempo: "
+            android:textSize="15dp"
+            android:id="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/btn_restart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="60 s"
+            android:textSize="15dp"
+            android:id="@+id/textViewTiempo"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/textView2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juega otra vez!"
+            android:id="@+id/btn_restart"
+            android:textSize="13dp"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:layout_marginLeft="17dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/textViewTiempo" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_pato"
+        android:layout_below="@+id/relativeLayout">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="La partida comienza en: "
+            android:id="@+id/textViewCuentaAtrasIni"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>
